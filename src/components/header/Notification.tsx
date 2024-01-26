@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 export default function Notification() {
   return (
     <Popover>
-      <PopoverTrigger>
+      <PopoverTrigger asChild>
         <Button variant="outline" className="rounded-full px-3 py-0">
           <Bell size="16px" />
         </Button>

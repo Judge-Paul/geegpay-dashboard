@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 export default function Profile() {
   return (
     <Popover>
-      <PopoverTrigger>
+      <PopoverTrigger asChild>
         <Button variant="outline" className="flex rounded-full px-2 py-1">
           <ProfilePic />
           <div className="my-auto ml-1 hidden text-xs md:block">
