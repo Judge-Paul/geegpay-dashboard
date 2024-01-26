@@ -1,5 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function Searchbar() {
   return (

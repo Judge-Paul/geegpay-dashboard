@@ -14,13 +14,13 @@ export default function Profile() {
       <PopoverTrigger>
         <Button variant="outline" className="flex rounded-full px-2 py-1">
           <ProfilePic />
-          <div className="my-auto ml-1 text-xs">
+          <div className="my-auto ml-1 hidden text-xs md:block">
             <h4 className="font-semibold">Judge-Paul</h4>
             <p className="text-[0.65rem] font-light text-secondary-foreground">
               Justin@gmail.com
             </p>
           </div>
-          <ChevronDown className="my-auto" />
+          <ChevronDown className="my-auto hidden md:flex" />
         </Button>
       </PopoverTrigger>
       <PopoverContent align="end" className="w-48 px-1 py-2">

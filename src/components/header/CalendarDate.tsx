@@ -19,14 +19,14 @@ export default function CalendarDate() {
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          className="w-[240px] justify-start text-left font-semibold"
+          className="justify-start text-left font-semibold md:w-[240px]"
           variant="ghost"
         >
-          <CalendarDays className="mr-1 h-4 w-4 -translate-x-1" />
-          {formattedDate}
+          <CalendarDays className="h-4 w-4 md:mr-1 md:-translate-x-1" />
+          <span className="hidden md:flex">{formattedDate}</span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="start" className="w-auto p-0">
+      <PopoverContent align="end" className="w-auto p-0">
         <Calendar initialFocus mode="single" />
       </PopoverContent>
     </Popover>
