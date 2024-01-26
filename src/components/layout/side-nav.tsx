@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import { type NavItem } from "@/components/layout/nav-items";
-import { useTheme } from "next-themes";
-import { useRouter } from "next/router";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/hooks/useSidebar";
 import { buttonVariants } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { Toggle } from "@/components/Toggle";
+import { useTheme } from "next-themes";
 
 interface SideNavProps {
   items: NavItem[];
@@ -15,27 +15,27 @@ interface SideNavProps {
 }
 
 export function SideNav({ items, setOpen, className }: SideNavProps) {
-  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState("Dashboard");
   const { isOpen } = useSidebar();
   const { theme } = useTheme();
-  const [active, setActive] = useState("dashboard");
-  const [currentTheme, setCurrentTheme] = useState(theme);
 
   useEffect(() => {
-    const hash = router.asPath.split("#")[1];
-    setActive(hash);
-  }, [router.asPath]);
+    setMounted(true);
+  }, []);
 
-  useEffect(() => {
-    setCurrentTheme(theme);
-  }, [theme]);
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <nav className="space-y-1">
       {items.map((item, index) => {
-        const isActive = active === item.title.toLowerCase();
+        const { title, href } = item;
+        const isActive = active === title;
         let color: string;
-        if (currentTheme === "light") {
+        console.log(active, title);
+        if (theme === "light") {
           color = isActive ? "#0D062D" : "#B2ABAB";
         } else {
           color = isActive ? "#BF40BF" : "#8A7E8A";
@@ -43,8 +43,9 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
         return (
           <span key={index} className="flex">
             <Link
-              href={item.href}
+              href={href}
               onClick={() => {
+                setActive(title);
                 if (setOpen) setOpen(false);
               }}
               className={cn(
@@ -60,15 +61,15 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
               />
               <span
                 className={cn(
-                  "absolute left-[50px] text-base duration-200 flex justify-between w-36",
+                  "absolute left-[50px] flex w-36 justify-between text-base duration-200",
                   !isOpen && className,
                 )}
               >
-                {item.title}
+                {title}
                 {isActive && isOpen && (
                   <span
                     className={cn(
-                      `border-r-4 rounded-l border-[${color}]`,
+                      `rounded-l border-r-4 border-[${color}]`,
                       "hidden sm:flex",
                     )}
                   ></span>
@@ -78,7 +79,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
             {isActive && !isOpen && (
               <span
                 className={cn(
-                  `border-r-4 rounded-l border-[${color}]`,
+                  `rounded-l border-r-4 border-[${color}]`,
                   "hidden sm:flex",
                 )}
               ></span>
@@ -86,6 +87,7 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
           </span>
         );
       })}
+      <Toggle />
     </nav>
   );
 }
