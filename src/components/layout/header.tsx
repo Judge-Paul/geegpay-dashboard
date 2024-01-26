@@ -1,11 +1,10 @@
 import { cn } from "@/lib/utils";
 import { MobileSidebar } from "@/components/layout/mobile-sidebar";
-import { Button } from "@/components/ui/button";
 import { Logo } from "../icons";
-import { Bell } from "lucide-react";
 import Searchbar from "@/components/header/Searchbar";
 import CalendarDate from "@/components/header/CalendarDate";
 import Profile from "@/components/header/Profile";
+import Notification from "@/components/header/Notification";
 
 export default function Header() {
   return (
@@ -14,17 +13,17 @@ export default function Header() {
         <div className={cn("block md:!hidden")}>
           <MobileSidebar />
         </div>
-        <div className="flex w-full justify-between text-xl">
-          <div className="flex">
+        <div className="flex w-full justify-between gap-2 text-xl">
+          <div className="flex gap-10">
             <Logo className="hidden md:block" color="#34CAA5" />
-            <h2 className="my-auto ml-10 text-xl font-semibold">Dashboard</h2>
+            <h2 className="my-auto hidden text-xl font-semibold md:flex">
+              Dashboard
+            </h2>
           </div>
           <div className="flex gap-5">
             <Searchbar />
             <CalendarDate />
-            <Button variant="outline" className="rounded-full px-3 py-0">
-              <Bell size="16px" />
-            </Button>
+            <Notification />
             <Profile />
           </div>
         </div>
