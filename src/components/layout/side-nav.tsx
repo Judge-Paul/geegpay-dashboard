@@ -1,9 +1,8 @@
 "use client";
-import Link from "next/link";
 import { type NavItem } from "@/components/layout/nav-items";
 import { cn } from "@/lib/utils";
 import { useSidebar } from "@/hooks/useSidebar";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Toggle } from "@/components/Toggle";
 import { useTheme } from "next-themes";
@@ -31,10 +30,9 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
   return (
     <nav className="space-y-1">
       {items.map((item, index) => {
-        const { title, href } = item;
+        const { title } = item;
         const isActive = active === title;
         let color: string;
-        console.log(active, title);
         if (theme === "light") {
           color = isActive ? "#0D062D" : "#B2ABAB";
         } else {
@@ -42,44 +40,30 @@ export function SideNav({ items, setOpen, className }: SideNavProps) {
         }
         return (
           <span key={index} className="flex">
-            <Link
-              href={href}
+            <Button
+              variant="ghost"
               onClick={() => {
                 setActive(title);
                 if (setOpen) setOpen(false);
               }}
-              className={cn(
-                buttonVariants({ variant: "link" }),
-                "group relative flex justify-start",
-                isActive && "font-bold",
-                `hover:font-bold`,
-              )}
+              className={cn(isActive && "font-bold", `hover:font-bold`)}
             >
               <item.icon
                 className={cn("size-6", "duration-200")}
                 color={color}
               />
-              <span
-                className={cn(
-                  "absolute left-[50px] flex w-36 justify-between text-base duration-200",
-                  !isOpen && className,
-                )}
-              >
-                {title}
-                {isActive && isOpen && (
-                  <span
-                    className={cn(
-                      `rounded-l border-r-4 border-[${color}]`,
-                      "hidden sm:flex",
-                    )}
-                  ></span>
-                )}
-              </span>
-            </Link>
+              {isOpen && (
+                <span
+                  className={cn("ml-3 flex w-24 justify-between text-base")}
+                >
+                  {title}
+                </span>
+              )}
+            </Button>
             {isActive && !isOpen && (
               <span
                 className={cn(
-                  `rounded-l border-r-4 border-[${color}]`,
+                  `ml-2 rounded-l border-r-4 border-[${color}]`,
                   "hidden sm:flex",
                 )}
               ></span>
