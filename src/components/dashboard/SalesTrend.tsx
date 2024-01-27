@@ -6,7 +6,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import Chart from "@/components/dashboard/Chart";
+import Chart from "@/components/dashboard/BarChart";
 import { getDailyData, getWeeklyData, getMonthlyData } from "@/lib/utils";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ export default function SalesTrend() {
     }
   };
   return (
-    <Card>
+    <Card className="h-full w-full">
       <CardHeader>
         <div className="flex justify-between">
           <h4 className="my-auto text-xs font-semibold md:text-xl">
