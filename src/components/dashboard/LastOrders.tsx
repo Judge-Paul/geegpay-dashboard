@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const transactions = [
   {
@@ -70,9 +71,18 @@ export default function LastOrders() {
           <TableBody>
             {transactions.map((transaction, index) => {
               const { name, date, amount, status, invoice } = transaction;
+              console.log(`/person${index}.png`);
               return (
                 <TableRow key={index}>
-                  <TableCell className="w-40 sm:w-max">{name}</TableCell>
+                  <TableCell>
+                    <span className="flex">
+                      <Avatar>
+                        <AvatarImage alt={name} src={`/person${index}.png`} />
+                        <AvatarFallback>{name[0]}</AvatarFallback>
+                      </Avatar>
+                      <span className="my-auto ml-2 font-medium">{name}</span>
+                    </span>
+                  </TableCell>
                   <TableCell className="text-[#898989] dark:text-[#6E6E6E]">
                     {date}
                   </TableCell>
