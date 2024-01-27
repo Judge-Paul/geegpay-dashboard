@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/hooks/useSidebar";
 import {
@@ -12,21 +12,15 @@ import {
 export default function SidebarToggle() {
   const { isOpen, toggle } = useSidebar();
 
-  const handleToggle = () => {
-    // setSwitchToggle(true);
-    // toggle();
-    // setTimeout(() => setSwitchToggle(false), 500);
-  };
   return (
     <div className="hidden h-full items-center sm:flex">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button onClick={toggle} variant="ghost" asChild>
+            <Button onClick={toggle} variant="ghost" className="px-0" asChild>
               <div
                 className={cn(
-                  "h-10 rounded-full bg-gray-700 px-0 transition-all hover:bg-gray-500 hover:duration-300 dark:bg-gray-300 dark:hover:bg-gray-400",
-                  isOpen ? "w-1.5" : "w-2.5",
+                  "h-10 w-2 rounded-full bg-gray-700 px-0 transition-all hover:bg-gray-500 hover:duration-300 dark:bg-gray-300 dark:hover:bg-gray-400",
                 )}
               ></div>
             </Button>
