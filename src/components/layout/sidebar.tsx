@@ -28,6 +28,7 @@ export default function Sidebar({ className }: SidebarProps) {
       </div>
       <div className="absolute bottom-0 mb-10 space-y-4 px-6">
         <svg
+          className="hover:cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -50,6 +51,7 @@ export default function Sidebar({ className }: SidebarProps) {
           ></path>
         </svg>
         <svg
+          className="hover:cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -74,6 +76,7 @@ export default function Sidebar({ className }: SidebarProps) {
           ></path>
         </svg>
         <svg
+          className="hover:cursor-pointer"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

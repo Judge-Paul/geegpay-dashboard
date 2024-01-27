@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useSidebar } from "@/hooks/useSidebar";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Toggle } from "@/components/Toggle";
+import { Toggle } from "@/components/toggles/ThemeToggle";
 import { useTheme } from "next-themes";
 
 interface SideNavProps {

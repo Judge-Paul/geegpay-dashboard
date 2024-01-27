@@ -4,11 +4,16 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SideNav } from "@/components/layout/side-nav";
 import { NavItems } from "@/components/layout/nav-items";
 import { Logo } from "../icons";
+import { useSidebar } from "@/hooks/useSidebar";
 
 export const MobileSidebar = () => {
+  const { isOpen, toggle } = useSidebar();
   const [open, setOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    if (open && isOpen === false) toggle();
+  }, [open]);
   useEffect(() => {
     setIsMounted(true);
   }, []);

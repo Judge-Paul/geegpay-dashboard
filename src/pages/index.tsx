@@ -28,7 +28,7 @@ export default function Home() {
             <div className="xl:col-span-7 xl:flex-1">
               <LastOrders />
             </div>
-            <div className="xl:col-span-5 xl:flex-1">
+            <div className="mt-4 sm:mt-0 xl:col-span-5 xl:flex-1">
               <TopPlatforms />
             </div>
           </div>

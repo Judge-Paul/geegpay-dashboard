@@ -34,7 +34,7 @@ export default function TrendCards() {
               </p>
               <p className="mt-1 text-3xl font-semibold sm:text-xl">{amount}</p>
             </CardContent>
-            <CardFooter className="gap-1 text-lg sm:text-sm xl:text-[0.68rem]">
+            <CardFooter className="text-md gap-1 sm:text-sm xl:text-[0.68rem]">
               <span
                 className={cn(
                   "flex rounded-full px-2 py-1.5 font-semibold",
