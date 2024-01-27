@@ -4,12 +4,16 @@ import SalesTrend from "@/components/dashboard/SalesTrend";
 import TrendCards from "@/components/dashboard/TrendCards";
 import LastOrders from "@/components/dashboard/LastOrders";
 import TopPlatforms from "@/components/dashboard/TopPlatforms";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className={`${inter.className}`}>
+      <Head>
+        <title>Geegpay Dashboard</title>
+      </Head>
       <Layout>
         <div className="mt-16 px-6 pt-5">
           <div className="gap-4 xl:grid xl:grid-cols-12">
