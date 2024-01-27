@@ -16,10 +16,8 @@ import {
 } from "@/components/ui/alert-dialog";
 import { ProfilePic } from "@/components/icons";
 import { Button } from "@/components/ui/button";
-import { buttonVariants } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import Link from "next/link";
 
 export default function Profile() {
   return (
@@ -67,14 +65,7 @@ export default function Profile() {
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancel</AlertDialogCancel>
-              <AlertDialogAction asChild>
-                <Link
-                  href="https://geegpay-dash.vercel.app"
-                  className={buttonVariants({ variant: "destructive" })}
-                >
-                  Continue
-                </Link>
-              </AlertDialogAction>
+              <AlertDialogAction>Continue</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
