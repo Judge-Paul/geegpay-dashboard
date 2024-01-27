@@ -6,9 +6,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <div className="flex h-screen border-collapse overflow-hidden">
+      <div className="flex h-screen w-full border-collapse overflow-hidden">
         <Sidebar />
-        {children}
+        <div className="w-full overflow-y-scroll">{children}</div>
       </div>
     </>
   );
