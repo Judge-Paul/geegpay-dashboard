@@ -34,7 +34,7 @@ export default function SalesTrend() {
     }
   };
   return (
-    <Card className="h-full w-full">
+    <Card className="h-full w-full shadow-lg">
       <CardHeader>
         <div className="flex justify-between">
           <h4 className="my-auto text-xs font-semibold md:text-xl">

@@ -49,7 +49,7 @@ const transactions = [
 
 export default function LastOrders() {
   return (
-    <Card className="h-full w-full">
+    <Card className="h-full w-full shadow-lg">
       <CardHeader>
         <div className="flex justify-between text-lg">
           <span className="">Last Orders</span>

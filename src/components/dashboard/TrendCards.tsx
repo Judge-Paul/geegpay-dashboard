@@ -19,7 +19,7 @@ export default function TrendCards() {
 
         const madeProfit = change > 0;
         return (
-          <Card key={name} className="py-4 sm:py-0">
+          <Card key={name} className="py-4 shadow-lg sm:py-0">
             <CardHeader className="grid grid-cols-2 space-y-0 pb-2 sm:pb-0">
               {icon}
               <Chart
@@ -34,10 +34,10 @@ export default function TrendCards() {
               </p>
               <p className="mt-1 text-3xl font-semibold sm:text-xl">{amount}</p>
             </CardContent>
-            <CardFooter className="gap-2 text-lg sm:text-sm xl:text-xs">
+            <CardFooter className="gap-1 text-lg sm:text-sm xl:text-[0.68rem]">
               <span
                 className={cn(
-                  "flex rounded-full  px-4 py-1.5 font-semibold",
+                  "flex rounded-full px-2 py-1.5 font-semibold",
                   madeProfit
                     ? "bg-[#34CAA5]/10 text-[#34CAA5]"
                     : "bg-[#EF716C]/10 text-[#EF716C]",
