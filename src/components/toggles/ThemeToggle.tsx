@@ -13,7 +13,6 @@ export const Toggle = () => {
   const handleToggle = () => {
     isDark && setTheme("light");
     !isDark && setTheme("dark");
-    console.log(`Theme is now ${isDark ? "dark" : "light"}`);
   };
   useEffect(() => {
     setMounted(true);

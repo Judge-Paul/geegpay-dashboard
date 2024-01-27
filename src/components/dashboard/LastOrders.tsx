@@ -71,7 +71,6 @@ export default function LastOrders() {
           <TableBody>
             {transactions.map((transaction, index) => {
               const { name, date, amount, status, invoice } = transaction;
-              console.log(`/person${index}.png`);
               return (
                 <TableRow key={index}>
                   <TableCell>
