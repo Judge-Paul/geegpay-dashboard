@@ -18,7 +18,7 @@ export default function SidebarToggle() {
     // setTimeout(() => setSwitchToggle(false), 500);
   };
   return (
-    <div className="flex h-full items-center">
+    <div className="hidden h-full items-center sm:flex">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
