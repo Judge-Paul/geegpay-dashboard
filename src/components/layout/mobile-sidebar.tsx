@@ -3,6 +3,7 @@ import { MenuIcon } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SideNav } from "@/components/layout/side-nav";
 import { NavItems } from "@/components/layout/nav-items";
+import { Logo } from "../icons";
 
 export const MobileSidebar = () => {
   const [open, setOpen] = useState(false);
@@ -21,8 +22,7 @@ export const MobileSidebar = () => {
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <div className="flex items-center justify-center gap-2">
-            <MenuIcon />
-            <h1 className="text-lg font-semibold">T3 app template</h1>
+            <Logo color="#34CAA5" />
           </div>
         </SheetTrigger>
         <SheetContent side="left" className="w-72">

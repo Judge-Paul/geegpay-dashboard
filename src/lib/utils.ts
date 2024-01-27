@@ -14,7 +14,7 @@ export function getMonthlyData(): chartData[] {
   const currentDate = new Date();
   const result = [];
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 10; i++) {
     const newDate = new Date(currentDate);
     newDate.setMonth(currentDate.getMonth() - i);
 
@@ -33,7 +33,7 @@ export function getWeeklyData(): chartData[] {
   const currentDate = new Date();
   const result = [];
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 10; i++) {
     const newDate = new Date(currentDate);
     newDate.setDate(currentDate.getDate() - i * 7);
 
@@ -52,7 +52,7 @@ export function getDailyData(): chartData[] {
   const currentDate = new Date();
   const result = [];
 
-  for (let i = 0; i < 12; i++) {
+  for (let i = 0; i < 10; i++) {
     const newDate = new Date(currentDate);
     newDate.setDate(currentDate.getDate() - i);
 
