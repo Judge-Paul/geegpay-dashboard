@@ -11,6 +11,13 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 const transactions = [
   {
+    name: "Geegpay",
+    date: "Jan 27, 2023",
+    amount: "$250",
+    status: "Pending",
+    invoice: "View",
+  },
+  {
     name: "Marcus Bergson",
     date: "Nov 15, 2023",
     amount: "$80,000",
@@ -36,13 +43,6 @@ const transactions = [
     date: "Nov 14, 2023",
     amount: "$100,000",
     status: "Refund",
-    invoice: "View",
-  },
-  {
-    name: "Phillip Lubin",
-    date: "Nov 13, 2023",
-    amount: "$78,000",
-    status: "Paid",
     invoice: "View",
   },
 ];
@@ -80,6 +80,7 @@ export default function LastOrders() {
                   <TableCell
                     className={cn(
                       status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]",
+                      status === "Pending" && "text-gray-500",
                     )}
                   >
                     {status}
