@@ -1,13 +1,9 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { chartData } from "@/types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
-}
-
-interface chartData {
-  name: string;
-  total: number;
 }
 
 export function getMonthlyData(): chartData[] {
