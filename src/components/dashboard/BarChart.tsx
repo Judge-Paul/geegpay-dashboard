@@ -6,8 +6,10 @@ import {
   XAxis,
   YAxis,
   Tooltip,
+  TooltipProps,
 } from "recharts";
 import { Badge } from "@/components/ui/badge";
+import { chartData } from "@/types";
 
 const CustomTooltip: React.FC<TooltipProps> = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -17,10 +19,10 @@ const CustomTooltip: React.FC<TooltipProps> = ({ active, payload }) => {
   return null;
 };
 
-export default function Chart({ timeline }) {
+export default function Chart({ data }: { data: chartData[] }) {
   return (
     <ResponsiveContainer width="100%" height={350}>
-      <BarChart data={timeline}>
+      <BarChart data={data}>
         <CartesianGrid strokeDasharray="4" vertical={false} />
         <Tooltip content={<CustomTooltip />} />
         <XAxis

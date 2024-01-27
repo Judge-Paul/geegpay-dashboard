@@ -56,7 +56,7 @@ export default function SalesTrend() {
         </div>
       </CardHeader>
       <CardContent>
-        <Chart timeline={timeline} />
+        <Chart data={timeline} />
       </CardContent>
     </Card>
   );
