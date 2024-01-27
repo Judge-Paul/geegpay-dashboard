@@ -3,10 +3,23 @@ import {
   PopoverContent,
   Popover,
 } from "@/components/ui/popover";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { ProfilePic } from "@/components/icons";
 import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default function Profile() {
   return (
@@ -38,9 +51,33 @@ export default function Profile() {
           Settings
         </Button>
         <Separator />
-        <Button variant="ghost" className="w-full justify-start px-2">
-          Log out
-        </Button>
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button variant="ghost" className="w-full justify-start px-2">
+              Log out
+            </Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Log out</AlertDialogTitle>
+              <AlertDialogDescription>
+                If you log out, you will be required to enter your username and
+                password the next time you open the site.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction asChild>
+                <Link
+                  href="/"
+                  className={buttonVariants({ variant: "destructive" })}
+                >
+                  Continue
+                </Link>
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </PopoverContent>
     </Popover>
   );
