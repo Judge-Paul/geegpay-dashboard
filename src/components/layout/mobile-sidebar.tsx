@@ -13,7 +13,7 @@ export const MobileSidebar = () => {
 
   useEffect(() => {
     if (open && isOpen === false) toggle();
-  }, [open]);
+  }, [open, isOpen]);
   useEffect(() => {
     setIsMounted(true);
   }, []);

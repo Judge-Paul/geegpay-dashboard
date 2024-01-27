@@ -69,7 +69,7 @@ export default function Profile() {
               <AlertDialogCancel>Cancel</AlertDialogCancel>
               <AlertDialogAction asChild>
                 <Link
-                  href="/"
+                  href="https://geegpay-dash.vercel.app"
                   className={buttonVariants({ variant: "destructive" })}
                 >
                   Continue
