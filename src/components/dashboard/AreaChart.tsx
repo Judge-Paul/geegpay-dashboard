@@ -1,8 +1,8 @@
 import { ResponsiveContainer, Area, AreaChart } from "recharts";
-import { chartData } from "@/types";
+import { TrendData } from "@/lib/data";
 
 interface ChartProps {
-  data: chartData[];
+  data: TrendData[];
   stroke?: string;
   fill?: string;
 }

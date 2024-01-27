@@ -1,4 +1,4 @@
-interface TrendData {
+export interface TrendData {
   name: string;
   value: number;
 }

@@ -5,26 +5,14 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  Tooltip,
-  TooltipProps,
 } from "recharts";
-import { Badge } from "@/components/ui/badge";
 import { chartData } from "@/types";
-
-const CustomTooltip: React.FC<TooltipProps> = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return <Badge className="rounded-sm">{`$${payload[0].value}`}</Badge>;
-  }
-
-  return null;
-};
 
 export default function Chart({ data }: { data: chartData[] }) {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart data={data}>
         <CartesianGrid strokeDasharray="4" vertical={false} />
-        <Tooltip content={<CustomTooltip />} />
         <XAxis
           dataKey="name"
           stroke="#888888"
