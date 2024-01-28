@@ -1,0 +1,21 @@
+svg path {
+  stroke-dashoffset: 420;
+  stroke-dasharray: 420;
+  animation: fadeInAndDraw 1s;
+  stroke-dashoffset: 0;
+}
+
+@keyframes fadeInAndDraw {
+  0% {
+    opacity: 0;
+    fill: rgba(255, 255, 255, 0);
+    stroke-dashoffset: 420;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
